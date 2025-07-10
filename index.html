@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tygen | AI-Powered Startup Evaluation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    html, body { font-family: 'Inter', sans-serif; margin:0; padding:0; }
+    body { scroll-behavior: smooth; }
+    .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; color: transparent; }
+    .gradient-bg { background: linear-gradient(135deg, #3b82f6, #8b5cf6); }
+    .hero-section { background-image: radial-gradient(circle at 25% 50%, rgba(59,130,246,0.15) 0%, rgba(255,255,255,1) 60%); }
+    .animated-underline { position: relative; }
+    .animated-underline::after { content: ''; position: absolute; left:0; bottom:-2px; width:0; height:2px; background-color:#3b82f6; transition: width .3s ease; }
+    .animated-underline:hover::after { width:100%; }
+    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04); }
+    .scroll-fade { opacity:0; transform:translateY(20px); transition: all .6s ease-out; }
+    .scroll-fade.active { opacity:1; transform:translateY(0); }
+    .score-ring { stroke-dasharray:440; stroke-dashoffset:440; animation:dash 1.5s ease-out forwards; }
+    @keyframes dash { to{ stroke-dashoffset:0; } }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        <a href="#" class="flex items-center space-x-2">
+          <svg class="h-8 w-8 text-blue-600" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M8 14c1.333 2 3.333 2 5.333 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg>
+          <span class="text-xl font-bold">Tygen</span>
+        </a>
+        <div class="hidden md:flex space-x-8">
+          <a href="#how-it-works" class="animated-underline">How It Works</a>
+          <a href="#features" class="animated-underline">Features</a>
+          <a href="#use-cases" class="animated-underline">Use Cases</a>
+          <a href="#waitlist" class="animated-underline">Waitlist</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#" class="hidden md:inline px-4 py-2 text-blue-600 font-medium rounded hover:bg-blue-50">Log in</a>
+          <a href="#waitlist" class="px-4 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700">Join Waitlist</a>
+          <button id="mobile-toggle" class="md:hidden focus:outline-none"><i class="fas fa-bars text-gray-600 text-xl"></i></button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white space-y-2 px-4 pb-4">
+      <a href="#how-it-works" class="block py-2">How It Works</a>
+      <a href="#features" class="block py-2">Features</a>
+      <a href="#use-cases" class="block py-2">Use Cases</a>
+      <a href="#waitlist" class="block py-2">Waitlist</a>
+    </div>
+  </nav>
+
+  <main class="pt-20">
+    <!-- HERO -->
+    <section class="hero-section py-24 px-4 sm:px-6 lg:px-8 gradient-bg">
+      <div class="max-w-7xl mx-auto lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+        <div class="scroll-fade">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">Smarter Startup Decisions,<br><span class="gradient-text">Powered by Agentic AI</span></h1>
+          <p class="text-lg text-white mb-8">Tygen analyzes startup ideas with multi-source, real-time internet data—market trends, financials, public sentiment—to generate a trusted Venture Score.</p>
+          <div class="flex space-x-4">
+            <a href="#waitlist" class="px-6 py-3 bg-white text-blue-600 font-semibold rounded hover:bg-gray-100">Join Waitlist</a>
+            <a href="#how-it-works" class="px-6 py-3 border border-white text-white font-semibold rounded hover:bg-white hover:bg-opacity-20">See How It Works</a>
+          </div>
+        </div>
+        <div class="mt-12 lg:mt-0 scroll-fade">
+          <div class="relative bg-white rounded-2xl p-6 shadow-xl">
+            <div class="flex justify-between items-center mb-6"><h3 class="font-semibold">Venture Score</h3><span class="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">AI Analysis</span></div>
+            <div class="flex flex-col items-center mb-6">
+              <div class="relative w-40 h-40"><svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="45" stroke="#e5e7eb" stroke-width="8" fill="none"/><circle class="score-ring" cx="50" cy="50" r="45" stroke="#3b82f6" stroke-width="8" fill="none" transform="rotate(-90 50 50)" stroke-linecap="round"/></svg><div class="absolute inset-0 flex flex-col items-center justify-center"><span class="text-4xl font-bold text-gray-900">88</span><span class="text-sm text-gray-500">/100</span></div></div>
+              <p class="mt-4 text-gray-600">Strong market fit and validated demand</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-gray-50 p-3 rounded-lg"><p class="text-xs text-gray-500 mb-1">Market Fit</p><div class="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden"><div class="bg-green-500 h-1.5 rounded-full" style="width:80%"></div></div><span class="text-sm font-medium text-gray-700">8/10</span></div>
+              <div class="bg-gray-50 p-3 rounded-lg"><p class="text-xs text-gray-500 mb-1">Competition</p><div class="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden"><div class="bg-yellow-500 h-1.5 rounded-full" style="width:60%"></div></div><span class="text-sm font-medium text-gray-700">6/10</span></div>
+              <div class="bg-gray-50 p-3 rounded-lg"><p class="text-xs text-gray-500 mb-1">Sentiment</p><div class="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden"><div class="bg-blue-500 h-1.5 rounded-full" style="width:85%"></div></div><span class="text-sm font-medium text-gray-700">8.5/10</span></div>
+              <div class="bg-gray-50 p-3 rounded-lg"><p class="text-xs text-gray-500 mb-1">Financial Health</p><div class="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden"><div class="bg-purple-500 h-1.5 rounded-full" style="width:70%"></div></div><span class="text-sm font-medium text-gray-700">7/10</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div class="max-w-7xl mx-auto text-center mb-12 scroll-fade"><h2 class="text-3xl font-bold mb-4">How <span class="text-blue-600">Tygen Works</span></h2><p class="text-lg text-gray-600">Our agentic AI platform performs multi-stage analysis to evaluate startup viability.</p></div>
+      <div class="relative scroll-fade"><div class="hidden lg:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-100 to-blue-200 -ml-0.5"></div><div class="space-y-12 lg:space-y-0 lg:grid lg:grid-cols-4 lg:gap-8">
+        <div class="relative text-center"><div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white">1</div><h3 class="font-semibold mb-2">Input Details</h3><p class="text-gray-600 text-sm">Provide idea, market, stage data.</p></div>
+        <div class="relative text-center"><div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white">2</div><h3 class="font-semibold mb-2">Agent Research</h3><p class="text-gray-600 text-sm">AI agents gather real-time data & financials.</p></div>
+        <div class="relative text-center"><div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white">3</div><h3 class="font-semibold mb-2">Scoring</h3><p class="text-gray-600 text-sm">Compute multi-factor Venture Score.</p></div>
+        <div class="relative text-center"><div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white">4</div><h3 class="font-semibold mb-2">Insights</h3><p class="text-gray-600 text-sm">Receive detailed report & recommendations.</p></div>
+      </div></div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8"><div class="max-w-7xl mx-auto text-center mb-16 scroll-fade"><h2 class="text-3xl font-bold mb-4">Key <span class="text-blue-600">Features</span></h2><p class="text-lg text-gray-600">Core capabilities powering your evaluation.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-fade">
+      <div class="feature-card bg-white p-8 rounded-xl transition"><div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg gradient-bg text-white"><i class="fas fa-chart-line text-2xl"></i></div><h3 class="font-semibold mb-2">Market Mapping</h3><p class="text-gray-600 text-sm">Identify competitors in real-time.</p></div>
+      <div class="feature-card bg-white p-8 rounded-xl transition"><div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg gradient-bg text-white"><i class="fas fa-database text-2xl"></i></div><h3 class="font-semibold mb-2">Financial Analysis</h3><p class="text-gray-600 text-sm">Analyze funding history & projections.</p></div>
+      <div class="feature-card bg-white p-8 rounded-xl transition"><div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg gradient-bg text-white"><i class="fas fa-comments text-2xl"></i></div><h3 class="font-semibold mb-2">Sentiment Mining</h3><p class="text-gray-600 text-sm">Gauge public sentiment from forums.</p></div>
+      <div class="feature-card bg-white p-8 rounded-xl transition"><div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg gradient-bg text-white"><i class="fas fa-exclamation-triangle text-2xl"></i></div><h3 class="font-semibold mb-2">Risk Detection</h3><p class="text-gray-600 text-sm">Flag potential legal & market risks.</p></div>
+      <div class="feature-card bg-white p-8 rounded-xl transition"><div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg gradient-bg text-white"><i class="fas fa-sync-alt text-2xl"></i></div><h3 class="font-semibold mb-2">Real-Time Updates</h3><p class="text-gray-600 text-sm">Constantly refresh data & scores.</p></div>
+      <div class="feature-card bg-white p-8 rounded-xl transition"><div class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg gradient-bg text-white"><i class="fas fa-lock text-2xl"></i></div><h3 class="font-semibold mb-2">Secure Handling</h3><p class="text-gray-600 text-sm">Enterprise-grade security protocols.</p></div>
+    </div></section>
+
+    <!-- USE CASES -->
+    <section id="use-cases" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50"><div class="max-w-7xl mx-auto text-center mb-12 scroll-fade"><h2 class="text-3xl font-bold mb-4">Who Should Use <span class="text-blue-600">Tygen</span></h2><p class="text-lg text-gray-600">Designed for everyone in the startup ecosystem.</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-fade">
+      <div class="bg-white p-8 rounded-xl"><h3 class="font-semibold mb-2">Founders</h3><p class="text-gray-600 text-sm">Validate ideas & refine pitches.</p></div>
+      <div class="bg-white p-8 rounded-xl"><h3 class="font-semibold mb-2">Angel Investors</h3><p class="text-gray-600 text-sm">Screen deal flow & assess risk.</p></div>
+      <div class="bg-white p-8 rounded-xl"><h3 class="font-semibold mb-2">VCs & Accelerators</h3><p class="text-gray-600 text-sm">Scale investment evaluation.</p></div>
+    </div></section>
+
+    <!-- WAITLIST -->
+    <section id="waitlist" class="py-20 px-4 sm:px-6 lg:px-8"><div class="max-w-4xl mx-auto scroll-fade text-center mb-12"><h2 class="text-3xl font-bold mb-4">Join <span class="text-blue-600">Early Access</span></h2><p class="text-lg text-gray-600">Be first to experience Tygen's AI evaluation platform.</p></div><div class="bg-white p-8 rounded-xl shadow-md scroll-fade"><form class="space-y-6 max-w-xl mx-auto">
+      <input type="text" placeholder="Full Name" class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <input type="email" placeholder="Email Address" class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+      <button type="submit" class="w-full py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">Join Now</button>
+    </form></div></section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div class="lg:col-span-2"><span class="text-2xl font-bold gradient-text">Tygen</span><p class="mt-4 text-gray-400">AI-powered startup evaluation to drive data-driven investment decisions.</p></div>
+        <div><h4 class="font-semibold mb-4">Product</h4><ul class="space-y-2 text-gray-400"><li>Features</li><li>Pricing</li><li>Integrations</li></ul></div>
+        <div><h4 class="font-semibold mb-4">Resources</h4><ul class="space-y-2 text-gray-400"><li>Blog</li><li>Help Center</li><li>API Docs</li></ul></div>
+        <div><h4 class="font-semibold mb-4">Company</h4><ul class="space-y-2 text-gray-400"><li>About</li><li>Careers</li><li>Contact</li></ul></div>
+      </div>
+      <div class="mt-8 border-t border-gray-800 pt-4 text-center text-gray-500 text-sm">© 2025 Tygen. All rights reserved.</div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('mobile-toggle').addEventListener('click',()=>{
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('.scroll-fade').forEach(el=>{
+      new IntersectionObserver((entries, obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('active');obs.unobserve(entry.target);}});},{threshold:0.1}).observe(el);
+    });
+  </script>
+</body>
+</html>
